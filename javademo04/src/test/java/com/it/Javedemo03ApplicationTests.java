@@ -23,7 +23,7 @@ class Javedemo03ApplicationTests {
         List<Dish> dishList = dishMapper.list();
         System.out.println("Count:" + dishList.stream().count());
         dishList.stream().forEach(u -> {
-            System.out.println(u.getName());
+            System.out.println(u.toString());
         });
     }
 }
