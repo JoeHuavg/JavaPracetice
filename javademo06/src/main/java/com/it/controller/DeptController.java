@@ -23,10 +23,8 @@ public class DeptController {
     //@RequestMapping(value = "/depts",method = RequestMethod.GET)
     @GetMapping("")
     public Result list() {
-
         log.info("查询全部");
         List<Dept> depList = deptService.list();
-
         return Result.success(depList);
     }
 
@@ -34,6 +32,13 @@ public class DeptController {
     public Result delete(@PathVariable Integer id){
         log.info("删除部门" +id);
         deptService.delete(id);
+        return Result.success();
+    }
+
+    @PostMapping("")
+    public Result add(@RequestBody Dept dept){
+        log.info("新增部门");
+        deptService.add(dept);
         return Result.success();
     }
 }
